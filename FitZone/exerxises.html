@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="/images/FitZone_webpic.jpg">
+    <link rel="stylesheet" href="style.css">
+    <title>Calories Calculator</title>
+</head>
+<body>
+    <header>
+        <section id="logo">
+            <a href="Home.html">
+                <img src="/images/FitZone_new.png" alt="FitZone Logo">
+            </a>
+        </section>
+        <nav id="home">
+            <ul class="Top_bar">
+                <li><a  href="Home.html">Home</a></li>
+                <li><a  href="About_us.html">About us</a></li>
+                <li><a  href="contact_us.html">Contact us</a></li>
+                <li><a  href="exerxises.html">Exercises</a></li>
+                <li><a class="active" href="CaloriesCalculator.html">Calories Calculator</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <h1 id="Calories_Calculator">Calories Calculator</h1>
+    
+    <form class="CaloriesCalculator">
+        <label>Gender:</label><br>
+        <div>
+            <input type="radio" id="gender_male" name="gender" value="male" required>
+            <label for="gender_male">Male</label>
+            <input type="radio" id="gender_female" name="gender" value="female">
+            <label for="gender_female">Female</label>
+        </div><br>
+        
+        <label for="age">Age</label><br>
+        <input type="number" id="age" name="age" required min="1" max="120"><br>
+        
+        <label for="weight">Weight (kg)</label><br>
+        <input type="number" id="weight" name="weight" required min="10" step="0.1"><br>
+        
+        <label for="height">Height (cm)</label><br>
+        <input type="number" id="height" name="height" required min="50"><br>
+        
+        <label for="active">Activity Level</label><br>
+        <select id="active" name="active" required>
+            <option value="inactive">Inactive (Little to no exercise)</option>
+            <option value="light exercise">Light exercise (1-2 days/week)</option>
+            <option value="moderate exercise">Moderate exercise (3-5 days/week)</option>
+            <option value="heavy exercise">Heavy exercise (6-7 days/week)</option>
+            <option value="athlete">Athlete (Twice a day - extremely active)</option>
+        </select>
+        <br>
+        <section>
+            <button type="button" id="calculate-btn">
+                Calculate
+            </button>
+        </section>
+    </form>
+    
+    <section id="result-output" style="max-width: 400px; margin: 30px auto 10px auto; padding: 20px; text-align: center; background-color: rgba(255, 255, 255, 0.9); border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); color: #000; display: none;">
+        <h2>Daily Maintenance</h2>
+        <p>This is the estimated total daily energy expenditure (TDEE):</p>
+        <h3 id="maintenance-cals" style="color: #32CD32; font-size: 2em; margin: 10px 0;">--</h3>
+    </section>
+
+    <section id="target-output" style="max-width: 400px; margin: 20px auto 50px auto; padding: 20px; text-align: center; background-color: rgba(255, 255, 255, 0.9); border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); color: #000; display: none;">
+        <h2>Goal Calories</h2>
+        <p>Choose your goal to see the recommended intake:</p>
+        
+        <div style="display: flex; justify-content: space-around; margin-top: 20px; text-align: center;">
+            <div style="width: 45%;">
+                <h4 style="color: #dc3545; margin-bottom: 5px;">Weight Loss</h4>
+                <h3 id="loss-cals" style="font-size: 1.6em; font-weight: bold;">--</h3>
+                <p style="font-size: 0.8em; margin: 0; padding: 0;">(Deficit)</p>
+            </div>
+            <div style="width: 45%;">
+                <h4 style="color: #007bff; margin-bottom: 5px;">Weight Gain</h4>
+                <h3 id="gain-cals" style="font-size: 1.6em; font-weight: bold;">--</h3>
+                <p style="font-size: 0.8em; margin: 0; padding: 0;">(Surplus)</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <aside>
+            <h1>Company</h1>
+            <ul>
+                <li><a  href="PrivacyPolicy.html">Privacy Policy</a></li>
+                <li><a  href="Terms&Conditions.html">Terms and Conditions</a></li>
+            </ul>
+        </aside>
+
+        <aside>
+            <h1>Social Media</h1>
+            <ul>
+                <li><a  href="https://www.instagram.com/fitzoneofficial/" target="_blank">INSTGRAM</a></li>
+                <li><a  href="https://www.facebook.com/FitZoneUK/" target="_blank">FACEBOOK</a></li>
+                <li><a  href="https://www.twitter.com/fitzone/" target="_blank">TWITTER</a></li>
+            </ul>
+        </aside>
+
+        <aside>
+            <h1>Get in touch</h1>
+            <ul>
+                <li><a  href=mailto:info@fitzone.com target=" _blank" title=" this is my email to contact">Email</a></li>
+                <li><a  href="tel:+44 9876 543210" target="_self" title="this is out phone number">+44 9876 543210</a></li>
+            </ul>
+        </aside>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
