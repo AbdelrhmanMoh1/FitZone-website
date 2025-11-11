@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<html>
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/jpg" href="/images/FitZone_webpic.jpg">
     <link rel="stylesheet" href="style.css">
-    <title>Calories Calculator</title>
+    <title>Exercises - FitZone Library</title>
 </head>
 <body>
     <header>
@@ -16,80 +14,98 @@
                 <img src="/images/FitZone_new.png" alt="FitZone Logo">
             </a>
         </section>
+        <section class="search-container">
+            <form action="/search-results" method="GET">
+                <input type="text" name="query" class="search-box" placeholder="Search Exercises...">
+                <button type="submit" class="search-button">Search</button>
+            </form>
+        </section>
         <nav id="home">
             <ul class="Top_bar">
                 <li><a  href="index.html">Home</a></li>
                 <li><a  href="About_us.html">About us</a></li>
                 <li><a  href="contact_us.html">Contact us</a></li>
-                <li><a  href="exercises.html">Exercises</a></li>
-                <li><a class="active" href="CaloriesCalculator.html">Calories Calculator</a></li>
+                <li><a class="active" href="exerxises.html">Exercises</a></li>
+                <li><a  href="CaloriesCalculator.html">Calories Calculator</a></li>
             </ul>
         </nav>
     </header>
-    
-    <h1 id="Calories_Calculator">Calories Calculator</h1>
-    
-    <form class="CaloriesCalculator">
-        <label>Gender:</label><br>
-        <div>
-            <input type="radio" id="gender_male" name="gender" value="male" required>
-            <label for="gender_male">Male</label>
-            <input type="radio" id="gender_female" name="gender" value="female">
-            <label for="gender_female">Female</label>
-        </div><br>
-        
-        <label for="age">Age</label><br>
-        <input type="number" id="age" name="age" required min="1" max="120"><br>
-        
-        <label for="weight">Weight (kg)</label><br>
-        <input type="number" id="weight" name="weight" required min="10" step="0.1"><br>
-        
-        <label for="height">Height (cm)</label><br>
-        <input type="number" id="height" name="height" required min="50"><br>
-        
-        <label for="active">Activity Level</label><br>
-        <select id="active" name="active" required>
-            <option value="inactive">Inactive (Little to no exercise)</option>
-            <option value="light exercise">Light exercise (1-2 days/week)</option>
-            <option value="moderate exercise">Moderate exercise (3-5 days/week)</option>
-            <option value="heavy exercise">Heavy exercise (6-7 days/week)</option>
-            <option value="athlete">Athlete (Twice a day - extremely active)</option>
-        </select>
-        <br>
-        <section>
-            <button type="button" id="calculate-btn">
-                Calculate
-            </button>
-        </section>
-    </form>
-    
-    <section id="result-output" style="max-width: 400px; margin: 30px auto 10px auto; padding: 20px; text-align: center; background-color: rgba(255, 255, 255, 0.9); border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); color: #000; display: none;">
-        <h2>Daily Maintenance</h2>
-        <p>This is the estimated total daily energy expenditure (TDEE):</p>
-        <h3 id="maintenance-cals" style="color: #32CD32; font-size: 2em; margin: 10px 0;">--</h3>
-    </section>
 
-    <section id="target-output" style="max-width: 400px; margin: 20px auto 50px auto; padding: 20px; text-align: center; background-color: rgba(255, 255, 255, 0.9); border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); color: #000; display: none;">
-        <h2>Goal Calories</h2>
-        <p>Choose your goal to see the recommended intake:</p>
+    <main class="exercise-page">
+        <section class="hero-section">
+            <h1 class="exercise-heading">Your Comprehensive Exercise Library</h1>
+            <p class="intro-text">Find detailed guides, video demonstrations, and tips for every muscle group. Start building your perfect workout today.</p>
+        </section>
+
+        <section class="category-grid">
+            <h2 class="category-title">Browse by Muscle Group</h2>
+            
+            <div class="exercise-grid">
+                <a href="/exercises/chest.html" class="exercise-card">
+                    <img src="/images/chest_icon.jpg" alt="Chest Exercise Icon">
+                    <h3>Chest Workouts</h3>
+                    <p>Build strength and mass in your pectorals.</p>
+                    <span class="cta-link">View Exercises →</span>
+                </a>
+
+                <a href="/exercises/back.html" class="exercise-card">
+                    <img src="/images/back_icon.jpg" alt="Back Exercise Icon">
+                    <h3>Back Workouts</h3>
+                    <p>Improve posture and strengthen your core back muscles.</p>
+                    <span class="cta-link">View Exercises →</span>
+                </a>
+
+                <a href="/exercises/legs.html" class="exercise-card">
+                    <img src="/images/legs_icon.jpg" alt="Leg Exercise Icon">
+                    <h3>Leg & Glutes</h3>
+                    <p>Develop powerful lower body strength and endurance.</p>
+                    <span class="cta-link">View Exercises →</span>
+                </a>
+
+                <a href="/exercises/arms.html" class="exercise-card">
+                    <img src="/images/arms_icon.jpg" alt="Arm Exercise Icon">
+                    <h3>Arm Workouts</h3>
+                    <p>Focus on biceps, triceps, and forearms for definition.</p>
+                    <span class="cta-link">View Exercises →</span>
+                </a>
+
+                <a href="/exercises/core.html" class="exercise-card">
+                    <img src="/images/core_icon.jpg" alt="Core Exercise Icon">
+                    <h3>Core Strength</h3>
+                    <p>Work on your abs and obliques for stability and definition.</p>
+                    <span class="cta-link">View Exercises →</span>
+                </a>
+
+                <a href="/exercises/shoulders.html" class="exercise-card">
+                    <img src="/images/shoulder_icon.jpg" alt="Shoulder Exercise Icon">
+                    <h3>Shoulders</h3>
+                    <p>Increase shoulder mobility and upper body aesthetics.</p>
+                    <span class="cta-link">View Exercises →</span>
+                </a>
+            </div>
+        </section>
         
-        <div style="display: flex; justify-content: space-around; margin-top: 20px; text-align: center;">
-            <div style="width: 45%;">
-                <h4 style="color: #dc3545; margin-bottom: 5px;">Weight Loss</h4>
-                <h3 id="loss-cals" style="font-size: 1.6em; font-weight: bold;">--</h3>
-                <p style="font-size: 0.8em; margin: 0; padding: 0;">(Deficit)</p>
+        <section class="featured-programs">
+            <h2 class="category-title">Featured Workout Programs</h2>
+            <div class="program-cards">
+                <div class="program-card beginner">
+                    <h3>Beginner Full-Body</h3>
+                    <p>A simple 3-day split to get started with basic movements.</p>
+                    <a href="/programs/beginner.html" class="program-button">Start Program</a>
+                </div>
+                <div class="program-card advanced">
+                    <h3>Advanced Push/Pull/Legs</h3>
+                    <p>High-volume split for experienced lifters targeting hypertrophy.</p>
+                    <a href="/programs/advanced.html" class="program-button">Start Program</a>
+                </div>
             </div>
-            <div style="width: 45%;">
-                <h4 style="color: #007bff; margin-bottom: 5px;">Weight Gain</h4>
-                <h3 id="gain-cals" style="font-size: 1.6em; font-weight: bold;">--</h3>
-                <p style="font-size: 0.8em; margin: 0; padding: 0;">(Surplus)</p>
-            </div>
-        </div>
-    </section>
+        </section>
+
+    </main>
 
     <footer>
         <aside>
-            <h1>Company</h1>
+            <h2>Company</h2>
             <ul>
                 <li><a  href="PrivacyPolicy.html">Privacy Policy</a></li>
                 <li><a  href="Terms&Conditions.html">Terms and Conditions</a></li>
@@ -97,23 +113,21 @@
         </aside>
 
         <aside>
-            <h1>Social Media</h1>
+            <h2>Social Media</h2>
             <ul>
-                <li><a  href="https://www.instagram.com/fitzoneofficial/" target="_blank">INSTGRAM</a></li>
+                <li><a  href="https://www.instagram.com/fitzoneofficial/" target="_blank">INSTAGRAM</a></li>
                 <li><a  href="https://www.facebook.com/FitZoneUK/" target="_blank">FACEBOOK</a></li>
                 <li><a  href="https://www.twitter.com/fitzone/" target="_blank">TWITTER</a></li>
             </ul>
         </aside>
 
         <aside>
-            <h1>Get in touch</h1>
+            <h2>Get in touch</h2>
             <ul>
-                <li><a  href=mailto:info@fitzone.com target=" _blank" title=" this is my email to contact">Email</a></li>
+                <li><a  href="mailto:info@fitzone.com" target="_blank" title=" this is my email to contact">Email</a></li>
                 <li><a  href="tel:+44 9876 543210" target="_self" title="this is out phone number">+44 9876 543210</a></li>
             </ul>
         </aside>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
