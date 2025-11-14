@@ -26,41 +26,57 @@
         </nav>
     </header>
     
-    <h1 id="Calories_Calculator">Calories Calculator</h1>
-    
-    <form class="CaloriesCalculator">
-        <label>Gender:</label><br>
-        <div>
-            <input type="radio" id="gender_male" name="gender" value="male" required>
-            <label for="gender_male">Male</label>
-            <input type="radio" id="gender_female" name="gender" value="female">
-            <label for="gender_female">Female</label>
-        </div><br>
+    <main>
+        <h1 id="Calories_Calculator">Calories Calculator</h1>
         
-        <label for="age">Age</label><br>
-        <input type="number" id="age" name="age" required min="1" max="120"><br>
+        <form class="CaloriesCalculator">
+            <label>Gender:</label>
+            <div>
+                <input type="radio" id="gender_male" name="gender" value="male" required>
+                <label for="gender_male">Male</label>
+                <input type="radio" id="gender_female" name="gender" value="female">
+                <label for="gender_female">Female</label>
+            </div>
+            
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" required min="1" max="120">
+            
+            <label for="weight">Weight (kg)</label>
+            <input type="number" id="weight" name="weight" required min="10" step="0.1">
+            
+            <label for="height">Height (cm)</label>
+            <input type="number" id="height" name="height" required min="50">
+            
+            <label for="active">Activity Level</label>
+            <select id="active" name="active" required>
+                <option value="inactive">Inactive (Little to no exercise)</option>
+                <option value="light exercise">Light exercise (1-2 days/week)</option>
+                <option value="moderate exercise">Moderate exercise (3-5 days/week)</option>
+                <option value="heavy exercise">Heavy exercise (6-7 days/week)</option>
+                <option value="athlete">Athlete (Twice a day - extremely active)</option>
+            </select>
+            
+            <section>
+                <button type="submit" id="calculate-btn">
+                Calculate
+                </button>
+            </section>
+        </form>
         
-        <label for="weight">Weight (kg)</label><br>
-        <input type="number" id="weight" name="weight" required min="10" step="0.1"><br>
-        
-        <label for="height">Height (cm)</label><br>
-        <input type="number" id="height" name="height" required min="50"><br>
-        
-        <label for="active">Activity Level</label><br>
-        <select id="active" name="active" required>
-            <option value="inactive">Inactive (Little to no exercise)</option>
-            <option value="light exercise">Light exercise (1-2 days/week)</option>
-            <option value="moderate exercise">Moderate exercise (3-5 days/week)</option>
-            <option value="heavy exercise">Heavy exercise (6-7 days/week)</option>
-            <option value="athlete">Athlete (Twice a day - extremely active)</option>
-        </select>
-        <br>
-        <section>
-            <button type="submit">
-            Calculate
-            </button>
+        <section id="result-output" style="display:none; text-align:center; margin-top:30px; padding:20px; background-color:white; border-radius:10px;">
+             <h2 style="color:#32CD32;">Maintenance Calories</h2>
+             <p id="maintenance-cals" style="font-size:2em; color:#000000; font-weight:bold;"></p>
         </section>
-    </form>
+        
+        <section id="target-output" style="display:none; text-align:center; margin-top:20px; padding:20px; background-color:white; border-radius:10px;">
+             <h2 style="color:#32CD32;">Target Goals (Estimated)</h2>
+             <p style="color:#000000; font-size:1.1em;">
+                Loss: <span id="loss-cals" style="color:#d9534f; font-weight:bold;"></span> kcal | 
+                Gain: <span id="gain-cals" style="color:#5cb85c; font-weight:bold;"></span> kcal
+             </p>
+        </section>
+        
+    </main>
     
     <footer>
         <aside>
@@ -88,5 +104,6 @@
             </ul>
         </aside>
     </footer>
+    <script src="script.js"></script> 
 </body>
 </html>

@@ -267,27 +267,89 @@ article {
     background-color: var(--color-accent-hover);
 }
 
-/* --- Calories Calculator Page --- */
+/* ================================================= */
+/* 5. Page Specific Styles - Calories Calculator Page */
+/* ================================================= */
+
 #Calories_Calculator {
     display: block; 
     font-size: 2.5em;
     text-align: center;
     color: var(--color-accent);
     margin-bottom: 30px;
-    margin-top: 0; /* Let the main margin handle spacing */
+    margin-top: 0; 
 }
 
 .CaloriesCalculator {
     max-width: 400px;
-    margin: 0 auto;
+    /* Center the form within the 'main' card */
+    margin: 0 auto; 
     padding: 30px;
-    background-color: rgba(255, 255, 255, 0.9);
+    /* Changed to solid white for a cleaner look */
+    background-color: var(--color-card-bg-light); 
+    color: var(--color-dark-text);
+    border-radius: 10px; /* Added border-radius here for consistency */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.CaloriesCalculator label {
+    font-weight: bold;
+    display: block; 
+    margin-top: 15px; /* Increased top margin for better separation */
+    margin-bottom: 5px;
     color: var(--color-dark-text);
 }
 
+/* Style for all text inputs and select boxes */
+.CaloriesCalculator input:not([type="radio"]):not([type="submit"]), 
+.CaloriesCalculator select {
+    width: 100%;
+    padding: 12px; /* Slightly larger padding */
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #aaa; 
+    font-size: 1em;
+    color: var(--color-dark-text); 
+    background-color: #f9f9f9; /* Slight off-white background for fields */
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.CaloriesCalculator input:focus, 
+.CaloriesCalculator select:focus {
+    outline: none;
+    border-color: var(--color-accent); /* Green border on focus */
+    box-shadow: 0 0 0 2px rgba(50, 205, 50, 0.4); /* Green shadow on focus */
+}
+
+/* Radio button container/labels (for gender) */
+.CaloriesCalculator div {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.CaloriesCalculator div label {
+    display: inline-block;
+    margin-top: 0;
+    font-weight: normal;
+    /* Ensures only the 'Male' and 'Female' labels are styled inline */
+}
+
+/* Calculate Button Styling */
 .CaloriesCalculator section button {
-    background-color: var(--color-accent);
-    color: var(--color-light-text);
+    display: block; 
+    width: 100%; /* Make button full width */
+    padding: 12px 20px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 30px; 
+    background-color: var(--color-accent); /* Green background */
+    color: var(--color-dark-text); /* Black text on green button */
+    font-weight: bold;
+    transition: background-color 0.3s;
 }
 
 .CaloriesCalculator section button:hover {

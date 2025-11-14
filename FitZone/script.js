@@ -79,5 +79,12 @@ function calculateCalories() {
     document.getElementById('target-output').style.display = 'block';
 }
 
-// Attach the function to the "Calculate" button
-document.getElementById('calculate-btn').addEventListener('click', calculateCalories);
+// ----------------------------------------------------
+// FIX: Change event listener to target the FORM submission 
+// and prevent the default action (page reload).
+// ----------------------------------------------------
+document.querySelector('.CaloriesCalculator').addEventListener('submit', function(e) {
+    // 💡 This is the critical fix: stop the page from reloading.
+    e.preventDefault(); 
+    calculateCalories();
+});
