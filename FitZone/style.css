@@ -243,28 +243,70 @@ article {
 }
 
 /* --- Contact us Page (#section2) --- */
-#section2 {
-    max-width: 600px;
+/* --- New Contact Page Button Styling --- */
+
+/* Ensures the main card container is centered and sized correctly */
+#contact-page {
+    max-width: 600px; /* Make the contact card slightly narrower */
     text-align: center;
 }
 
-#section2 h1 {
-    color: var(--color-accent);
+.contact-buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 40px;
 }
 
-#section2 form {
-    max-width: 400px;
-    margin: 0 auto;
-    text-align: left;
+.contact-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.3s;
+    text-transform: uppercase;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: var(--color-dark-text); /* Black text on colored button */
 }
 
-#section2 form input[type="submit"] {
-    background-color: var(--color-accent);
-    color: var(--color-dark-text);
+.email-button {
+    background-color: var(--color-accent); /* Lime Green */
 }
 
-#section2 form input[type="submit"]:hover {
-    background-color: var(--color-accent-hover);
+.phone-button {
+    background-color: #f0f0f0; /* Light Gray for contrast */
+    border: 2px solid var(--color-accent);
+}
+
+.contact-button:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+}
+
+.contact-detail {
+    font-size: 0.8em;
+    font-weight: normal;
+    margin-top: 5px;
+    /* Ensure phone text is dark on light button */
+    color: var(--color-dark-text); 
+}
+
+/* For icon styling (requires font awesome CDN link in <head> if you use the i tag) */
+.contact-button i {
+    margin-bottom: 5px;
+    font-size: 1.2em;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+    .contact-button {
+        padding: 15px;
+        font-size: 1.3em;
+    }
 }
 
 /* ================================================= */
